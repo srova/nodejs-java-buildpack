@@ -3,7 +3,7 @@
 
 A Custom Buildpack [buildpack](http://docs.cloudfoundry.org/buildpacks/) for Node.js based apps with Oracle's JDK 8 installed.
 
-This is based on the Cloud Foundry Node.js buildpack [buildpack](http://docs.cloudfoundry.org/buildpacks/) which is also based on the [Heroku buildpack] (https://github.com/heroku/heroku-buildpack-nodejs).
+This is based on the [Cloud Foundry buildpack](https://github.com/cloudfoundry/nodejs-buildpack) which is also based on the [Heroku buildpack](https://github.com/heroku/heroku-buildpack-nodejs).
 
 Additional documentation can be found at the [CloudFoundry.org](http://docs.cloudfoundry.org/buildpacks/).
 
@@ -15,7 +15,7 @@ This buildpack will get used if you have a `package.json` file in your project's
 cf push my_app -b https://github.com/syahrul-aiman/nodejs-java-buildpack.git
 ```
 
-In order to use the JAVA, Node.js needs to use child_process and execute the JAVA command such as:
+In order to use JAVA, Node.js needs to use child_process and execute java command such as:
 ```bash
 const exec = require('child_process').exec;
 exec("java lib/HelloWorld.jar", {shell: '/bin/bash'}, function (err, stdout, stderr) {
@@ -43,6 +43,33 @@ Set engines.node in package.json to the semver range
   "node": "0.10.33"
 }
 ```
+
+## How Oracle's JDK 8 Was Added?
+
+The following script was added to the compile script
+
+```bash
+\#binaries_java.sh
+install_java() {
+  local version="$1"
+  local dir="$2"
+  
+  local download_url="http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.tar.gz"
+  echo "Downloading JAVA [$download_url]"
+  curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" "$download_url" -o /tmp/java.tar.gz || (echo "Unable to download java; does it exist?" && false)
+  echo "Download complete"
+
+  echo "Installing JAVA"
+  mkdir /tmp/jdk
+  mkdir $dir
+  tar xzf /tmp/java.tar.gz -C /tmp/jdk
+  rm -rf $dir/*
+  mv /tmp/jdk/jdk1.8.0_73/* $dir
+  chmod +x $dir/bin	
+}
+```
+
+Then, PATH and JAVA_HOME was set as well.
 
 ## Contributing
 
