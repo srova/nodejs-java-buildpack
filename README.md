@@ -24,6 +24,9 @@ exec("java lib/HelloWorld.jar", {shell: '/bin/bash'}, function (err, stdout, std
 });
 ```
 
+Sample application:
+[Node.js Java BeanShell Script Executer](https://github.com/syahrul-aiman/bluemix-nodejs-java-beanshell)
+
 ## Options
 
 ### Specify a node version
