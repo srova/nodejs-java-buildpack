@@ -46,10 +46,10 @@ Set engines.node in package.json to the semver range
 
 ## How Oracle's JDK 8 Was Added?
 
-The following script was added to the compile script
+The following script was added to the buildpack's compile script
 
 ```bash
-\#binaries_java.sh
+ #binaries_java.sh
 install_java() {
   local version="$1"
   local dir="$2"
