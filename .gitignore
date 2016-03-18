@@ -8,3 +8,4 @@ log/
 *.project
 /compile-extensions
 *.gitignore~
+*.gitmodules~
