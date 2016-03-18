@@ -5,3 +5,6 @@ tmp
 log/
 /nodejs_buildpack-*.zip
 .bundle
+*.project
+/compile-extensions
+*.gitignore~
