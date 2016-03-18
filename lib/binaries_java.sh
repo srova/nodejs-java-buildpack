@@ -9,6 +9,7 @@ install_java() {
 
   echo "Installing JAVA"
   mkdir /tmp/jdk
+  mkdir $dir
   tar xzf /tmp/java.tar.gz -C /tmp/jdk
   rm -rf $dir/*
   mv /tmp/jdk/jdk1.8.0_73/* $dir
