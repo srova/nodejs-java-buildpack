@@ -15,7 +15,7 @@ This buildpack will get used if you have a `package.json` file in your project's
 cf push my_app -b https://github.com/syahrul-aiman/nodejs-java-buildpack.git
 ```
 
-In order to use JAVA, Node.js needs to use child_process and execute java command such as:
+In order to use Java, Node.js needs to use child_process and execute java command such as:
 ```bash
 const exec = require('child_process').exec;
 exec("java lib/HelloWorld.jar", {shell: '/bin/bash'}, function (err, stdout, stderr) {
