@@ -1,6 +1,5 @@
 install_cfcli() {
-  local version="$1"
-  local dir="$2"
+  local dir="$1"
 
   local download_url="https://cli.run.pivotal.io/stable?release=linux64-binary&source=github"
   echo "Downloading CF CLI [$download_url]"
