@@ -35,6 +35,8 @@ export NODE_ENV=${NODE_ENV:-production}
 export PATH="$HOME/.heroku/java/bin:$PATH"
 export JAVA_HOME="$HOME/.heroku/java"
 
+export PATH="$HOME/.heroku/cf:$PATH"
+
 calculate_concurrency
 
 export MEMORY_AVAILABLE=$MEMORY_AVAILABLE

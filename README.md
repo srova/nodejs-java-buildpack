@@ -3,6 +3,8 @@
 
 A Custom Buildpack [buildpack](http://docs.cloudfoundry.org/buildpacks/) for Node.js based apps with Oracle's JDK 8 installed.
 
+Additionally, the Cloud Foundry CLI was included in the buildpack. 
+
 This is based on the [Cloud Foundry buildpack](https://github.com/cloudfoundry/nodejs-buildpack) which is also based on the [Heroku buildpack](https://github.com/heroku/heroku-buildpack-nodejs).
 
 Additional documentation can be found at the [CloudFoundry.org](http://docs.cloudfoundry.org/buildpacks/).
@@ -74,6 +76,30 @@ install_java() {
 ```
 
 Then, PATH and JAVA_HOME was set as well.
+
+## How Cloud Foundry CLI Was Added?
+
+The following script was added to the buildpack's compile script
+
+```bash
+ #binaries_cfcli.sh
+install_cfcli() {
+  local version="$1"
+  local dir="$2"
+
+  local download_url="https://cli.run.pivotal.io/stable?release=linux64-binary&source=github"
+  echo "Downloading CF CLI [$download_url]"
+  curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" "$download_url" -o /tmp/cf.tar.gz || (echo "Unable to download cf CLI; does it exist?" && false)
+  echo "Download complete!"
+
+  echo "Installing CF CLI"
+  tar xzf /tmp/cf.tar.gz -C $dir
+  echo "Installation complete!"	
+}
+```
+
+Then, PATH was set as well.
+
 
 ## Contributing
 
