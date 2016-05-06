@@ -4,6 +4,7 @@ install_swift() {
   
   CLANG_VERSION=3.7.0
   SWIFT_VERSION=2.2.1-RELEASE
+  SWIFT_VERSION_=2.2.1-release
   
   if [[ ! -d "/tmp/clang-$CLANG_VERSION" ]]; then
     mkdir -p "/tmp/clang-$CLANG_VERSION"
@@ -23,7 +24,7 @@ install_swift() {
     echo "Installation complete!"
   fi
   
-  local download_url="https://swift.org/builds/swift-$SWIFT_VERSION/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-ubuntu14.04.tar.gz"
+  local download_url="https://swift.org/builds/swift-$SWIFT_VERSION_/ubuntu1404/swift-$SWIFT_VERSION/swift-$SWIFT_VERSION-ubuntu14.04.tar.gz"
   echo "Downloading Swift [$download_url]"
   curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L "$download_url" -o /tmp/swift.tar.gz || (echo "Unable to download swift; does it exist?" && false)
   echo "Download complete!"
