@@ -13,12 +13,11 @@ install_swift() {
     echo "Download complete!"
     
     echo "Installing clang"
-    mkdir -p /tmp/clang-$CLANG_VERSION
+    mkdir -p /tmp/clang
     mkdir -p $dir/clang-$CLANG_VERSION
-    xz -d -c /tmp/clang.tar.xz | tar x -C /tmp/clang-$CLANG_VERSION
+    xz -d -c /tmp/clang.tar.xz | tar x -C /tmp/clang
     rm -rf $dir/clang-$CLANG_VERSION/*
-    mv /tmp/clang-$CLANG_VERSION/* $dir/clang-$CLANG_VERSION/
-    ls $dir/clang-$CLANG_VERSION
+    mv /tmp/clang/clang+llvm-$CLANG_VERSION-x86_64-linux-gnu-ubuntu-14.04/* $dir/clang-$CLANG_VERSION
     chmod +x "$dir/clang-$CLANG_VERSION/bin" $dir/clang-$CLANG_VERSION
     export PATH="$dir/clang-$CLANG_VERSION/bin:$PATH"
     echo "Installation complete!"
