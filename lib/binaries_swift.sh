@@ -18,8 +18,8 @@ install_swift() {
     xz -d -c /tmp/clang.tar.xz | tar x -C "/tmp/clang-$CLANG_VERSION"
     rm -rf $dir/clang-$CLANG_VERSION/*
     mv /tmp/clang-$CLANG_VERSION/* "$dir/clang-$CLANG_VERSION"
-    ll $dir/clang-$CLANG_VERSION
-    chmod +x "$dir/clang-$CLANG_VERSION/bin"$dir/clang-$CLANG_VERSION
+    ls $dir/clang-$CLANG_VERSION
+    chmod +x "$dir/clang-$CLANG_VERSION/bin" $dir/clang-$CLANG_VERSION
     export PATH="$dir/clang-$CLANG_VERSION/bin:$PATH"
     echo "Installation complete!"
   fi
