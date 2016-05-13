@@ -13,6 +13,7 @@ install_maven() {
   tar xzf /tmp/maven.tar.gz -C /tmp/maven
   rm -rf $dir/*
   mv /tmp/maven/* $dir
-  chmod +x $dir/bin
+  ls $dir
+  #chmod +x $dir/bin
   echo "Installation complete!"	
 }
