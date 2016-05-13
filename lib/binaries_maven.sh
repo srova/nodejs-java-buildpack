@@ -8,8 +8,8 @@ install_maven() {
   echo "Download complete!"
 
   echo "Installing Maven"
-  mkdir /tmp/maven
-  mkdir $dir
+  mkdir -p /tmp/maven
+  mkdir -p $dir
   tar xzf /tmp/maven.tar.gz -C /tmp/maven
   rm -rf $dir/*
   mv /tmp/maven/* $dir
