@@ -103,7 +103,7 @@ install_bins() {
     install_npm "$npm_engine" "$BUILD_DIR/.heroku/node"
   fi
   warn_old_npm
-  
+
   install_java "$java_engine" "$BUILD_DIR/.heroku/java"
   install_maven "$maven_engine" "$BUILD_DIR/.heroku/maven"
 #  install_swift "$swift_engine" "$BUILD_DIR/.heroku/swift"
@@ -135,9 +135,8 @@ restore_cache | output "$LOG_FILE"
 
 build_dependencies() {
   echo "Verifico JAVA"
-  echo $JAVA_HOME
   echo java --version
-  
+
   if $PREBUILD; then
     echo "Prebuild detected (node_modules already exists)"
     rebuild_node_modules "$BUILD_DIR"
