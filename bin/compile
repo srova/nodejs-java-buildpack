@@ -134,7 +134,6 @@ header "Restoring cache"
 restore_cache | output "$LOG_FILE"
 
 build_dependencies() {
-  ls -l $dir
   echo "Verifico JAVA"
   java --version
   echo "************"
