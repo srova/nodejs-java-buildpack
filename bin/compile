@@ -134,8 +134,12 @@ header "Restoring cache"
 restore_cache | output "$LOG_FILE"
 
 build_dependencies() {
+  ls -l $dir
   echo "Verifico JAVA"
-  echo java --version
+  java --version
+  echo "************"
+
+
 
   if $PREBUILD; then
     echo "Prebuild detected (node_modules already exists)"
