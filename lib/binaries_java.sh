@@ -20,6 +20,9 @@ install_java() {
   ls -l $dir
 
 
+  echo "JAVA INSTALLATO -------------"
+
+
 
 
 
