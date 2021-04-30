@@ -15,4 +15,10 @@ install_java() {
   mv /tmp/jdk/java-se-8u41-ri/* $dir
   chmod +x $dir/bin
   echo "Installation complete!"	
+  
+  export PATH="/tmp/jdk/bin:$PATH"
+  echo "PATH exported"	
+  echo $PATH
+  
+  
 }
