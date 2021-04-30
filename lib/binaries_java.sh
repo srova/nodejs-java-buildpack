@@ -19,6 +19,9 @@ install_java() {
   export PATH="/tmp/jdk/bin:$PATH"
   echo "PATH exported"	
   echo $PATH
+  export JAVA_HOME="/tmp/jdk"
+  echo $JAVA_HOME
+
   
   
 }
