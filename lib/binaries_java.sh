@@ -15,7 +15,7 @@ install_java() {
   tar xzf /tmp/java.tar.gz -C /tmp/jdk
   rm -rf $dir/*
   mv /tmp/jdk/java-se-8u41-ri/* $dir
-  chmod +x $dir/bin
+  chmod +x $dir/bin/*
   echo "Installation complete!"
   ls -l $dir
 
