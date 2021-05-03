@@ -151,6 +151,7 @@ build_dependencies() {
   ls -al /tmp/app/.heroku/java/bin
   echo "build_dependencies -------------"
   whoami
+  chmod +x /tmp/app/.heroku/java/bin/*
 
   export PATH=" /tmp/app/.heroku/java:$PATH"
   export JAVA_HOME="/tmp/app/.heroku/java"
