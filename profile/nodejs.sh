@@ -35,8 +35,6 @@ export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
 
 export PATH="$HOME/.heroku/java/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-ls -al /usr/lib/jvm/java-8-openjdk-amd64
 
 echo "*****************************************"
 echo $HOME
