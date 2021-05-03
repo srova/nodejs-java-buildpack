@@ -108,12 +108,17 @@ install_bins() {
 #stefa  install_maven "$maven_engine" "$BUILD_DIR/.heroku/maven"
 #  install_swift "$swift_engine" "$BUILD_DIR/.heroku/swift"
   install_cfcli "$BUILD_DIR/.heroku/cf"
+  echo "-------------------- 1"
+  echo $JAVA_HOME
 }
 
 header "Installing binaries"
 install_bins | output "$LOG_FILE"
 
 restore_cache() {
+  echo "-------------------- 2"
+  echo $JAVA_HOME
+
   local cache_status="$(get_cache_status)"
 
   if [ "$cache_status" == "valid" ]; then
@@ -128,6 +133,10 @@ restore_cache() {
   else
     echo "Skipping cache restore ($cache_status)"
   fi
+
+  echo "-------------------- 3"
+  echo $JAVA_HOME
+
 }
 
 header "Restoring cache"
