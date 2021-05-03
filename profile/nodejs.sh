@@ -37,6 +37,15 @@ export NODE_ENV=${NODE_ENV:-production}
 export PATH="$HOME/.heroku/java/bin:$PATH"
 export JAVA_HOME="$HOME/.heroku/java"
 
+echo "*****************************************"
+echo $HOME
+echo $JAVA_HOME
+echo $PATH
+
+java -version
+echo "*****************************************"
+
+
 export PATH="$HOME/.heroku/maven/bin:$PATH"
 
 export PATH="$HOME/.heroku/swift/clang/bin:$PATH"
