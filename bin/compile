@@ -136,8 +136,14 @@ restore_cache | output "$LOG_FILE"
 build_dependencies() {
   echo "Verifico JAVA"
   echo "************"
-  ls -al /tmp/app/.heroku
+  ls -al /tmp/app/.heroku/java
   echo "build_dependencies -------------"
+
+  export PATH=" /tmp/app/.heroku/java:$PATH"
+  export JAVA_HOME="/tmp/app/.heroku/java"
+
+  echo "JAVA INSTALLATO -------------"
+  javac -version
 
 
 
