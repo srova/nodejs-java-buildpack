@@ -35,11 +35,13 @@ export NODE_HOME="$HOME/.heroku/node"
 export NODE_ENV=${NODE_ENV:-production}
 
 export PATH="$HOME/.heroku/java/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.heroku/java/jre/lib/amd64/server:$LD_LIBRARY_PATH"
 
 echo "*****************************************"
 echo $HOME
 echo $JAVA_HOME
 echo $PATH
+echo $LD_LIBRARY_PATH
 
 java -version
 echo "*****************************************"
