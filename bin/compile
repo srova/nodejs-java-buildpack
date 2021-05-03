@@ -116,6 +116,9 @@ header "Installing binaries"
 install_bins | output "$LOG_FILE"
 
 restore_cache() {
+  export PATH=" /tmp/app/.heroku/java:$PATH"
+  export JAVA_HOME="/tmp/app/.heroku/java"
+
   echo "-------------------- 2"
   echo $JAVA_HOME
 
