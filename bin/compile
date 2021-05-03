@@ -136,7 +136,6 @@ restore_cache | output "$LOG_FILE"
 build_dependencies() {
   echo "Verifico JAVA"
   echo "************"
-  echo $JAVA_HOME
   javac -version
   echo "build_dependencies -------------"
 
