@@ -7,20 +7,23 @@ install_java() {
   curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L "$download_url" -o /tmp/java.tar.gz || (echo "Unable to download java; does it exist?" && false)
   echo "Download complete!"
 
+  echo "dir  -------------"
   echo $dir
 
   echo "Installing JAVA"
   mkdir /tmp/jdk
   mkdir $dir
+
   tar xzf /tmp/java.tar.gz -C /tmp/jdk
   rm -rf $dir/*
+
   mv /tmp/jdk/java-se-8u41-ri/* $dir
   chmod +x $dir/bin/*
   echo "Installation complete!"
   ls -l $dir
 
-export PATH="$dir/bin:$PATH"
-export JAVA_HOME="$dir"
+  export PATH="$dir/bin:$PATH"
+  export JAVA_HOME="$dir"
 
   echo "JAVA INSTALLATO -------------"
   javac -version
