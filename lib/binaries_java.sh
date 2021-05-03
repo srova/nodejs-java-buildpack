@@ -19,8 +19,11 @@ install_java() {
   echo "Installation complete!"
   ls -l $dir
 
+export PATH="$dir/bin:$PATH"
+export JAVA_HOME="$dir"
 
   echo "JAVA INSTALLATO -------------"
+  java -version
 
 
 
