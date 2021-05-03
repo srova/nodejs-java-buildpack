@@ -2,7 +2,7 @@ install_java() {
   local version="$1"
   local dir="$2"
 
-  local download_url= "https://download.java.net/openjdk/jdk16/ri/openjdk-16+36_linux-x64_bin.tar.gz"
+  local download_url="https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz"
   echo "Downloading JAVA [$download_url]"
   curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L "$download_url" -o /tmp/java.tar.gz || (echo "Unable to download java; does it exist?" && false)
   echo "Download complete!"
@@ -17,8 +17,7 @@ install_java() {
   tar xzf /tmp/java.tar.gz -C /tmp/jdk
   rm -rf $dir/*
 
-  # mv /tmp/jdk/java-se-8u41-ri/* $dir
-  mv /tmp/jdk/jdk-16/* $dir
+  mv /tmp/jdk/jdk-11/* $dir
 
 
   chmod +x $dir/bin/*
