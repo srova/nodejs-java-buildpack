@@ -153,8 +153,8 @@ build_dependencies() {
   whoami
   chmod +x /tmp/app/.heroku/java/bin/*
 
-  export PATH=" /tmp/app/.heroku/java:$PATH"
-  export JAVA_HOME="/tmp/app/.heroku/java"
+  export PATH=" /tmp/app/.heroku/java/bin:$PATH"
+  export JAVA_HOME="/tmp/app/.heroku/java/bin"
 
   echo "JAVA INSTALLATO -------------"
   javac -version
