@@ -23,7 +23,7 @@ export PATH="$dir/bin:$PATH"
 export JAVA_HOME="$dir"
 
   echo "JAVA INSTALLATO -------------"
-  java -version
+  javac -version
 
 
 
