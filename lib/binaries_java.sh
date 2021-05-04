@@ -2,7 +2,7 @@ install_java() {
   local version="$1"
   local dir="$2"
 
-  local download_url="https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz"
+  local download_url="https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz"
   echo "Downloading JAVA [$download_url]"
   curl  --silent --fail --retry 5 --retry-max-time 15 -j -k -L "$download_url" -o /tmp/java.tar.gz || (echo "Unable to download java; does it exist?" && false)
   echo "Download complete!"
@@ -17,7 +17,7 @@ install_java() {
   tar xzf /tmp/java.tar.gz -C /tmp/jdk
   rm -rf $dir/*
 
-  mv /tmp/jdk/jdk-11/* $dir
+  mv /tmp/jdk/jdk8u292-b10/* $dir
 
 
   chmod +x $dir/bin/*
