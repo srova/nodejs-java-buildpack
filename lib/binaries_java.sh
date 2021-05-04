@@ -27,10 +27,8 @@ install_java() {
   export PATH="$dir/bin:$PATH"
   export JAVA_HOME="$dir"
 
-  echo "JAVA INSTALLATO -------------"
-  whoami
+  echo "JAVA INSTALLATO "
 
-  javac -version
 
 
 
