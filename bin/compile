@@ -144,7 +144,6 @@ restore_cache | output "$LOG_FILE"
 build_dependencies() {
   echo "Verifico JAVA"
   echo "************"
-  ls -al /tmp/app/.heroku/java/bin
   chmod +x /tmp/app/.heroku/java/bin/*
 
   export PATH="/tmp/app/.heroku/java/bin:$PATH"

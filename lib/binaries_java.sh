@@ -22,7 +22,6 @@ install_java() {
 
   chmod +x $dir/bin/*
   echo "Installation complete!"
-  ls -l $dir
 
   export PATH="$dir/bin:$PATH"
   export JAVA_HOME="$dir"
